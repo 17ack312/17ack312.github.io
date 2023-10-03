@@ -1,0 +1,2115 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>AASTRAPEX</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="src/db/logo.ico">
+<link rel="stylesheet" href="src/css/main.css">
+<link rel="stylesheet" type="text/css" href="src/css/demo.css" />
+<link rel="stylesheet" type="text/css" href="src/css/component.css" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<!--link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css"-->
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/regular.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/svg-with-js.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/v4-font-face.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/v4-shims.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/v5-font-face.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/brands.min.js">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/conflict-detection.min.js">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/fontawesome.min.js">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/regular.min.js">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/solid.min.js">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/v4-shims.min.js">
+
+
+<script src="https://tympanus.net/Blueprints/OnScrollEffectLayout/js/modernizr.custom.js"></script>
+<style>
+	/*#E5EAFS
+#D0BDF4
+#8458B3
+	*/
+	body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+	body, html {
+	  height: 100%;
+	  color: #e5eaf5;
+	  line-height: 1.8;
+	}
+
+	/* Create a Parallax Effect */
+	.bgimg-1, .bgimg-2, .bgimg-3 {
+	  background-attachment: fixed;
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+
+	/* First image (Logo. Full height) */
+	.bgimg-1 {
+	  background-image: url('src/db/logo.png');
+	  min-height: 100%;
+	}
+
+	/* Second image (Portfolio) */
+	.bgimg-2 {
+	  background-image: url("src/db/logo.png");
+	  min-height: 400px;
+	}
+
+	/* Third image (Contact) */
+	.bgimg-3 {
+	  background-image: url("src/db/logo.png");
+	  min-height: 400px;
+	}
+
+	.w3-wide {letter-spacing: 10px;}
+	.w3-hover-opacity {cursor: pointer;}
+
+	/* Turn off parallax scrolling for tablets and phones */
+	@media only screen and (max-device-width: 1600px) {
+	  .bgimg-1, .bgimg-2, .bgimg-3 {
+	    background-attachment: scroll;
+	    min-height: 400px;
+	  }
+	}
+
+
+	/*-------------------------------------------------*/
+	@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+	*,
+	*::before,
+	*::after {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	}
+
+	#portfolio {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  font-family: "Roboto", sans-serif;
+	  scrollbar-color: #ef5350 #ffe;
+	  text-transform: uppercase;
+	  letter-spacing: 0.2em;
+	  font-size: 0.9rem;
+	  color: #e5eaf5;
+	}
+
+	#portfolio ul {
+	  list-style: none;
+	  width: min(90vw, 51rem);
+	  max-width: 51rem;
+	  display: flex;
+	  overflow-x: auto;
+	  overflow-y: hidden;
+	  padding-bottom: 2rem;
+	  max-width: 100%;
+	}
+
+	#portfolio li {
+	  flex: 0 0 45vw;
+	  max-width: 18rem;
+	  position: -webkit-sticky;
+	  position: sticky;
+	  top: 0;
+	  left: 0;
+	  display: flex;
+	  justify-content: center;
+	  align-items: flex-start;
+	  height: 20rem;
+	}
+	#portfolio li span {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  display: block;
+	  padding: 0.75em;
+	  height: 100%;
+	  writing-mode: vertical-lr;
+	  text-align: center;
+	  transform: rotate(180deg);
+	}
+	#portfolio li::before {
+	  content: "";
+	  position: absolute;
+	  top: 50%;
+	  left: 0%;
+	  transform: translate(0%, -50%);
+	  height: 100%;
+	  width: 100%;
+	  background-image: linear-gradient(to right, #f44336cc 2%, transparent 60%);
+	  z-index: -1;
+	}
+	#portfolio li img {
+	  display: block;
+	  height: 20rem;
+	  width: 100%;
+	  object-fit: cover;
+	  position: absolute;
+	  top: 50%;
+	  left: 0;
+	  transform: translate(0%, -50%);
+	  z-index: -2;
+	}
+
+	@media (min-width: 53rem) {
+	  #portfolio li:nth-child(1) {
+	    left: 0rem;
+	  }
+
+	  #portfolio li:nth-child(2) {
+	    left: 2.2rem;
+	  }
+
+	  #portfolio li:nth-child(3) {
+	    left: 4.4rem;
+	  }
+
+	  #portfolio li:nth-child(4) {
+	    left: 6.6rem;
+	  }
+
+	  #portfolio li:nth-child(5) {
+	    left: 8.8rem;
+	  }
+
+	  #portfolio li:nth-child(6) {
+	    left: 11rem;
+	  }
+
+	  #portfolio li:nth-child(7) {
+	    left: 13.2rem;
+	  }
+
+	  #portfolio li:nth-child(8) {
+	    left: 15.4rem;
+	  }
+
+	  #portfolio li:nth-child(9) {
+	    left: 17.6rem;
+	  }
+
+	  #portfolio li:nth-child(10) {
+	    left: 19.8rem;
+	  }
+
+	  #portfolio li:nth-child(11) {
+	    left: 22rem;
+	  }
+
+	  #portfolio li:nth-child(12) {
+	    left: 24.2rem;
+	  }
+
+	  #portfolio li:nth-child(13) {
+	    left: 26.4rem;
+	  }
+
+	  #portfolio li:nth-child(14) {
+	    left: 28.6rem;
+	  }
+
+	  #portfolio li:nth-child(15) {
+	    left: 30.8rem;
+	  }
+	}	
+	/******************************************/
+	.animated-logo{
+		
+	}
+	.animation01 img{
+	    vertical-align:bottom;
+	    max-width:100%;
+	    width: 100%;
+	}
+	.animation01 h1, .animation01 h2, .animation01 p{
+	    margin: 0;
+	}
+	.animation01{
+	    position: absolute;
+	    width: 100%;
+	    height: 100%;
+	}
+	.border_box{
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    width: 15vw;
+	    height: 15vw;
+	}
+	.line{
+	    display: block;
+	    position: absolute;
+	    right: 0;
+	    bottom: 0;
+	    background-color: #845b46;
+	    opacity: 0;
+	}
+	.line01{
+	    top: 0;
+	    left: 100%;
+	    width: 0.15vw;
+	    height: 15.15vw;
+	    transform-origin: bottom;
+	    animation: animation01_line01 0.2s linear 0.3s forwards;
+	}
+	.line03{
+	    top: 0;
+	    left: 0;
+	    width: 0.15vw;
+	    height: 15.15vw;
+	    transform-origin: bottom;
+	    animation: animation01_line01 0.2s linear 0.6s forwards;
+	}
+	@keyframes animation01_line01{
+	    0%{
+	        transform: scale3d(1,0,1);
+	        opacity: 1;
+	    }
+	    100%{
+	        transform: scale3d(1,1,1);
+	        opacity: 1;
+	    }
+	}
+	.line02{
+	    top: 100%;
+	    left: 0;
+	    width: 15.15vw;
+	    height: 0.15vw;
+	    transform-origin: right;
+	    animation: animation01_line02 0.2s linear 0.4s forwards;
+	}
+	.line04{
+	    top: 0;
+	    left: 0;
+	    width: 15.15vw;
+	    height: 0.15vw;
+	    transform-origin: left;
+	    animation: animation01_line02 0.2s linear 0.8s forwards;
+	}
+	@keyframes animation01_line02{
+	    0%{
+	        transform: scale3d(0,1,1);
+	        opacity: 1;
+	    }
+	    100%{
+	        transform: scale3d(1,1,1);
+	        opacity: 1;
+	    }
+	}
+	.circle{
+	    display: block;
+	    position: absolute;
+	    right: 0;
+	    bottom: 0;
+	    width: 1.2vw;
+	    height: 1.2vw;
+	    border: 0.1vw solid #8458B3;
+	    border-radius: 50%;
+	    opacity: 0;
+	}
+	.circle01{
+	    top: 96%;
+	    left: 96%;
+	    margin: 0 auto;
+	    animation: animation01_circle 0.3s linear 0.3s forwards;
+	}
+	.circle02{
+	    top: 96%;
+	    left: -99%;
+	    margin: 0 auto;
+	    animation: animation01_circle 0.3s linear 0.45s forwards;
+	}
+	.circle03{
+	    top: -4%;
+	    left: -99%;
+	    margin: 0 auto;
+	    animation: animation01_circle 0.3s linear 0.65s forwards;
+	}
+	.circle04{
+	    top: -4%;
+	    left: 96%;
+	    margin: 0 auto;
+	    animation: animation01_circle 0.3s linear 0.85s forwards;
+	}
+	@keyframes animation01_circle{
+	    0%{
+	        transform: scale3d(0,0,1);
+	        opacity: 1;
+	    }
+	    40%{
+	        transform: scale3d(1,1,1);
+	        opacity: 1;
+	    }
+	    60%{
+	        transform: scale3d(1,1,1);
+	        opacity: 1;
+	    }
+	    100%{
+	        transform: scale3d(0,0,1);
+	        opacity: 1;
+	    }
+	}
+
+	.wave{
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    width: 13.5vw;
+	    height: 13.5vw;
+	    overflow: hidden;
+	}
+	.wave_wrapper{
+	    width: 200%;
+	    height: 150%;
+	    position: absolute;
+	    top: -25%;
+	    right: 0;
+	    bottom: 0;
+	    left: -50%;
+	    margin: 0 auto;
+	    animation: animation01_wave_wrapper 1s linear 1s forwards;
+	}
+	@keyframes animation01_wave_wrapper{
+	    0%{
+	        transform: rotate(0);
+	    }
+	    25%{
+	        transform: rotate(15deg);
+	    }
+	    50%{
+	        transform: rotate(0);
+	    }
+	    75%{
+	        transform: rotate(-15deg);
+	    }
+	    100%{
+	        transform: rotate(0);
+	    }
+	}
+	.wave_box{
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;
+	    margin: 0 auto;
+	    width: 100%;
+	    height: 100%;
+	    background-color: #e5eaf5;
+	    transform-origin: bottom;
+	    animation: animation01_wave_box 1s linear 1s forwards;
+	    opacity: 0;
+	}
+	@keyframes animation01_wave_box{
+	    0%{
+	        transform: scale3d(1,0,1);
+	        opacity: 1;
+	    }
+	    100%{
+	        transform: scale3d(1,1,1);
+	        opacity: 1;
+	    }
+	}
+	.animation_line{
+	    position: absolute;
+	    right: 0;
+	    bottom: 0;
+	    margin: 0 auto;
+	    background-color: #e5eaf5;
+	    opacity: 0;
+	}
+	.animation_line_wrapper{
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;
+	    margin: 0 auto;
+	    width: 100%;
+	    height: 100%;
+	}
+	.animation_line01{
+	    top: -15%;
+	    left: 0;
+	    width: 0.2vw;
+	    height: 0.7vw;
+	    animation: animation_line01 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 1.9s;
+	    transform-origin: top;
+	}
+	.animation_line02_wrapper{
+	    transform: rotate(45deg)
+	}
+	.animation_line02{
+	    top: -35%;
+	    left: 0;
+	    width: 0.2vw;
+	    height: 0.7vw;
+	    animation: animation_line01 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 1.9s;
+	    transform-origin: top;
+	}
+	@keyframes animation_line01{
+	    0%{
+	        transform: translateY(0);
+	        opacity: 1;
+	    }
+	    100%{
+	        transform: translateY(-1.5vw);
+	        opacity: 1;
+	    }
+	}
+	.animation_line03{
+	    top: 50%;
+	    left: 110%;
+	    width: 0.7vw;
+	    height: 0.2vw;
+	    animation: animation_line03 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 1.9s;
+	    transform-origin: right;
+	}
+	.animation_line04_wrapper{
+	    transform: rotate(45deg)
+	}
+	.animation_line04{
+	    top: 50%;
+	    left: 128%;
+	    width: 0.7vw;
+	    height: 0.2vw;
+	    animation: animation_line03 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 1.9s;
+	    transform-origin: right;
+	}
+	@keyframes animation_line03{
+	    0%{
+	        transform: translateX(0);
+	        opacity: 1;
+	    }
+	    100%{
+	        transform: translateX(1.5vw);
+	        opacity: 1;
+	    }
+	}
+	.animation_line05{
+	    top: 110%;
+	    left: 0;
+	    width: 0.2vw;
+	    height: 0.7vw;
+	    animation: animation_line05 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 1.9s;
+	    transform-origin: bottom;
+	}
+	.animation_line06_wrapper{
+	    transform: rotate(45deg)
+	}
+	.animation_line06{
+	    top: 128%;
+	    left: 0;
+	    width: 0.2vw;
+	    height: 0.7vw;
+	    animation: animation_line05 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 1.9s;
+	    transform-origin: bottom;
+	}
+	@keyframes animation_line05{
+	    0%{
+	        transform: translateY(0);
+	        opacity: 1;
+	    }
+	    100%{
+	        transform: translateY(1.5vw);
+	        opacity: 1;
+	    }
+	}
+	.animation_line07{
+	    top: 50%;
+	    left: -130%;
+	    width: 0.7vw;
+	    height: 0.2vw;
+	    animation: animation_line07 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 1.9s;
+	    transform-origin: left;
+	}
+	.animation_line08_wrapper{
+	    transform: rotate(45deg)
+	}
+	.animation_line08{
+	    top: 50%;
+	    left: -162%;
+	    width: 0.7vw;
+	    height: 0.2vw;
+	    animation: animation_line07 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) 1.9s;
+	    transform-origin: left;
+	}
+	@keyframes animation_line07{
+	    0%{
+	        transform: translateX(0);
+	        opacity: 1;
+	    }
+	    100%{
+	        transform: translateX(-1.5vw);
+	        opacity: 1;
+	    }
+	}
+
+	.rhombus{
+	    position: absolute;
+	    width: 100%;
+	    height: 100%;
+	    animation: rhombus 0.2s linear 2.2s forwards;
+	}
+	@keyframes rhombus {
+	    0%{
+	        transform: rotate(0)
+	    }
+	    100%{
+	        transform: rotate(45deg)
+	    }
+	}
+	.rhombus_small{
+	    position: absolute;
+	    width: 100%;
+	    height: 100%;
+	    animation: rhombus_small 0.4s linear 2.55s forwards;
+	}
+	@keyframes rhombus_small {
+	    0%{
+	        transform: scale3d(1,1,1);
+	        opacity: 1;
+	    }
+	    99%{
+	        transform: scale3d(0.15,0.15,0.15);
+	        opacity: 1;
+	    }
+	    100%{
+	        transform: scale3d(0.15,0.15,0.15);
+	        opacity: 0;
+	    }
+	}
+
+	.animation02{
+	    position: absolute;
+	    width: 100%;
+	    height: 100%;
+	}
+	.rhombus_box{
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;
+	    margin: auto;
+	    width: 40vw;
+	    height: 40vw;
+	    animation: rhombus_box 0.4s linear 3.55s forwards;
+	}
+	.rhombus_item_wrapper{
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;
+	    margin: auto;
+	    width: 2.1vw;
+	    height: 2.1vw;
+	    opacity: 0;
+	}
+	.rhombus_item{
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;
+	    margin: auto;
+	    width: 2.1vw;
+	    height: 2.1vw;
+	    background-color: #e5eaf5;
+	    transform: rotate(45deg)
+	}
+	.rhombus_item01_wrapper{
+	    animation: rhombus_item01 0.5s linear 2.95s forwards;
+	}
+
+	.rhombus_item02_wrapper{
+	    animation: rhombus_item02 0.5s linear 2.95s forwards;
+	}
+	@keyframes rhombus_item01{
+	    0%{
+	        transform: translateX(0);
+	        opacity: 1;
+	    }
+	    100%{
+	        transform: translateX(-18.5vw);
+	        opacity: 1;
+	    }
+	}
+	@keyframes rhombus_item02{
+	    0%{
+	        transform: translateX(0);
+	        opacity: 1;
+	    }
+	    100%{
+	        transform: translateX(18.5vw);
+	        opacity: 1;
+	    }
+	}
+	@keyframes rhombus_box{
+	    0%{
+	        transform: rotate(0)
+	    }
+	    100%{
+	        transform: rotate(360deg)
+	    }
+	}
+
+	.double_content{
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    width: 100%;
+	    height: 100%;
+	}
+	.double_wrapper02{
+	    position: relative;
+	    width: 100%;
+	    height: 100%;
+	    animation: double_content forwards;
+	    opacity: 0;
+	}
+	.double_wrapper01{
+	    display: block;
+	    position: absolute;
+	    border-radius: 50%;
+	    overflow: hidden;
+	}
+	.double_wrapper01::before {
+	    content: "";
+	    display: block;
+	    position: absolute;
+	    background: black;
+	    z-index: 2;
+	}
+	.double_wrapper01::after {
+	    content: "";
+	    display: block;
+	    position: absolute;
+	    background: black;
+	    z-index: 3;
+	}
+	.dotted02{
+	    top: 0;
+	    animation-delay: 4.2s;
+	}
+	.dotted_hide{
+	    position: absolute;
+	    width: 31vw;
+	    height: 31vw;
+	    z-index: 1;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    border-radius: 50%;
+	    overflow: hidden;
+	}
+	.dotted01{
+	    width: 30vw;
+	    height: 30vw;
+	    border: dotted 0.5vw #e5eaf5;
+	    z-index: 1;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    overflow: visible;
+	}
+	.dotted_right::before{
+	    content: "";
+	    display: block;
+	    position: absolute;
+	    background: black;
+	    z-index: 3;
+	}
+	.dotted_right::before{
+	    top: 0;
+	    left: 0;
+	    width: 32vw;
+	    height: 32vw;
+	    transform-origin: left 16vw;
+	    animation: rotate-circle-right 0.5s linear 4.2s forwards;
+	}
+	.dotted_right{
+	    position: absolute;
+	    width: 16vw;
+	    height: 32vw;
+	    z-index: 1;
+	    top: 50%;
+	    left: 75%;
+	    transform: translate(-50%, -50%);
+	    overflow: hidden;
+	}
+	.dotted01::after{
+	    top: -1vw;
+	    left: -17vw;
+	    width: 32vw;
+	    height: 32vw;
+	    transform-origin: right 16vw;
+	    animation: rotate-circle-left01 0.5s linear 4.2s forwards;
+	}
+	@keyframes rotate-circle-left01 {
+	    0%   {
+	        transform: rotate(0deg);
+	        background: black;
+	        opacity: 1;
+	    }
+	    50%  {
+	        transform: rotate(-180deg);
+	        background: black;
+	        opacity: 1;
+	    }
+	    50.01% {
+	        transform: rotate(0deg);
+	        opacity: 0;
+	    }
+	    100% {
+	        transform: rotate(0deg);
+	        opacity: 0;
+	    }
+	}
+	.white02{
+	    top: -100%;
+	    animation-delay: 4.7s;
+	}
+	.white01{
+	    width: 29vw;
+	    height: 29vw;
+	    background: #e5eaf5;
+	    z-index: 1;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	}
+	.white01::before{
+	    top: 0;
+	    left: 14.5vw;
+	    width: 29vw;
+	    height: 29vw;
+	    transform-origin: left 14.5vw;
+	    animation: rotate-circle-right 0.3s linear 4.7s forwards;
+
+	}
+	.white01::after{
+	    top: 0;
+	    left: -14.5vw;
+	    width: 29vw;
+	    height: 29vw;
+	    transform-origin: right 14.5vw;
+	    animation: rotate-circle-left 0.3s linear 4.7s forwards;
+	}
+	@keyframes rotate-circle-left {
+	    0%   {
+	        transform: rotate(0deg);
+	        background: black;
+	    }
+	    50%  {
+	        transform: rotate(-180deg);
+	        background: black;
+	    }
+	    50.01% {
+	        transform: rotate(-360deg);
+	        background: #e5eaf5;
+	    }
+	    100% {
+	        transform: rotate(-360deg);
+	        background: #e5eaf5;
+	    }
+	}
+	.gray02{
+	    top: -200%;
+	    animation-delay: 4.8s;
+	}
+	.gray01{
+	    width: 8vw;
+	    height: 8vw;
+	    background: #494d5f;
+	    z-index: 1;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	}
+	.gray01::before{
+	    top: 0;
+	    left: 4vw;
+	    width: 8vw;
+	    height: 8vw;
+	    background: #e5eaf5;
+	    transform-origin: left 4vw;
+	    animation: rotate-circle-right 0.5s linear 4.8s forwards;
+
+	}
+	.gray01::after{
+	    top: 0;
+	    left: -4vw;
+	    width: 8vw;
+	    height: 8vw;
+	    background: #e5eaf5;
+	    transform-origin: right 4vw;
+	    animation: rotate-circle-left03 0.5s linear 4.8s forwards;
+	}
+	@keyframes rotate-circle-left03 {
+	    0%   {
+	        transform: rotate(0deg);
+	        background: #e5eaf5;
+	    }
+	    50%  {
+	        transform: rotate(-180deg);
+	        background: #e5eaf5;
+	    }
+	    50.01% {
+	        transform: rotate(-360deg);
+	        background: #494d5f;
+	    }
+	    100% {
+	        transform: rotate(-360deg);
+	        background: #494d5f;
+	    }
+	}
+	.orange02{
+	    top: -300%;
+	    animation-delay: 5.3s;
+	}
+	.orange01{
+	    width: 27vw;
+	    height: 27vw;
+	    background: #8458B3;
+	    z-index: 1;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	}
+	.orange01::before{
+	    top: 0;
+	    left: 13.5vw;
+	    width: 27vw;
+	    height: 27vw;
+	    background: #e5eaf5;
+	    transform-origin: left 13.5vw;
+	    animation: rotate-circle-right 0.5s linear 5.3s forwards;
+
+	}
+	.orange01::after{
+	    top: 0;
+	    left: -13.5vw;
+	    width: 27vw;
+	    height: 27vw;
+	    background: #e5eaf5;
+	    transform-origin: right 13.5vw;
+	    animation: rotate-circle-left02 0.5s linear 5.3s forwards;
+	}
+	@keyframes rotate-circle-left02 {
+	    0%   {
+	        transform: rotate(0deg);
+	        background: #e5eaf5;
+	    }
+	    50%  {
+	        transform: rotate(-180deg);
+	        background: #e5eaf5;
+	    }
+	    50.01% {
+	        transform: rotate(-360deg);
+	        background: #8458B3;
+	    }
+	    100% {
+	        transform: rotate(-360deg);
+	        background: #8458B3;
+	    }
+	}
+
+	@keyframes double_content{
+	    0%{
+	    opacity: 0;
+	    }
+	    100%{
+	        opacity: 1;
+	    }
+	}
+	@keyframes rotate-circle-right {
+	    0%   { transform: rotate(0deg); }
+	    50%  { transform: rotate(0deg); }
+	    100% { transform: rotate(-180deg); }
+	}
+
+	.name{
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    width: 30vw;
+	    height: 30vw;
+	    animation: name 1.0s cubic-bezier(0.165, 0.84, 0.44, 1) 5.9s forwards;
+	    opacity: 0;
+	}
+	.name p{
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    color: #e5eaf5;
+	    font-size: 2.0vw;
+	    font-family: 'Algerian';
+	    letter-spacing: 0.1em;
+	}
+	.name_circle01{
+	    position: absolute;
+	    top: 50%;
+	    left: 20%;
+	    transform: translate(-50%, -50%);
+	    background-color: #e5eaf5;
+	    width: 2vw;
+	    height: 2vw;
+	    border-radius: 50%;
+	}
+	.name_circle02{
+	    position: absolute;
+	    top: 50%;
+	    left: 80%;
+	    transform: translate(-50%, -50%);
+	    background-color: #e5eaf5;
+	    width: 2vw;
+	    height: 2vw;
+	    border-radius: 50%;
+	}
+	@keyframes name {
+	    0%{
+	        opacity: 0;
+	    }
+	    100%{
+	        opacity: 1;
+	    }
+	}	
+
+
+	/*******************************/
+	.our-team {
+	  padding: 30px 0 40px;
+	  margin-bottom: 30px;
+	  background-color: #d0b0f4;
+	  text-align: center;
+	  overflow: hidden;
+	  position: relative;
+	}
+
+	.our-team .picture {
+	  display: inline-block;
+	  height: 130px;
+	  width: 130px;
+	  margin-bottom: 50px;
+	  z-index: 1;
+	  position: relative;
+	}
+
+	.our-team .picture::before {
+	  content: "";
+	  width: 100%;
+	  height: 0;
+	  border-radius: 50%;
+	  background-color: #8458B3;
+	  position: absolute;
+	  bottom: 135%;
+	  right: 0;
+	  left: 0;
+	  opacity: 0.9;
+	  transform: scale(3);
+	  transition: all 0.3s linear 0s;
+	}
+
+	.our-team:hover .picture::before {
+	  height: 100%;
+	}
+
+	.our-team .picture::after {
+	  content: "";
+	  width: 100%;
+	  height: 100%;
+	  border-radius: 50%;
+	  background-color: #8458B3;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  z-index: -1;
+	}
+
+	.our-team .picture img {
+	  width: 100%;
+	  height: auto;
+	  border-radius: 50%;
+	  transform: scale(1);
+	  transition: all 0.9s ease 0s;
+	}
+
+	.our-team:hover .picture img {
+	  box-shadow: 0 0 0 14px #d0b0f4;
+	  transform: scale(0.7);
+	}
+
+	.our-team .title {
+	  display: block;
+	  font-size: 15px;
+	  color: #4e5052;
+	  text-transform: capitalize;
+	}
+
+	.our-team .social {
+	  width: 100%;
+	  padding: 0;
+	  margin: 0;
+	  background-color: #8458B3;
+	  position: absolute;
+	  bottom: -100px;
+	  left: 0;
+	  transition: all 0.5s ease 0s;
+	}
+
+	.our-team:hover .social {
+	  bottom: 0;
+	}
+
+	.our-team .social li {
+	  display: inline-block;
+	}
+
+	.our-team .social li a {
+	  display: block;
+	  padding: 10px;
+	  font-size: 17px;
+	  color: white;
+	  transition: all 0.3s ease 0s;
+	  text-decoration: none;
+	}
+
+	.our-team .social li a:hover {
+	  color: #8458B3;
+	  background-color: #d0b0f4;
+	}
+
+	/***********************************/
+
+
+	.cont {
+		 background: #8458B3;
+		 font-family: 'Open Sans', Helvetica, Arial, sans-serif;   
+		 position: relative;
+		 overflow: hidden;
+		 height: 100vh;
+		 padding: 80px 70px;
+	}
+	 .cont__inner {
+		 position: relative;
+		 height: 100%;
+	}
+	 .cont__inner:hover .el__bg:after {
+		 opacity: 1;
+	}
+	 .el {
+		 position: absolute;
+		 left: 0;
+		 top: 0;
+		 width: 19.2%;
+		 height: 100%;
+		 background: #252525;
+		 transition: transform 0.6s 0.7s, width 0.7s, opacity 0.6s 0.7s, z-index 0s 1.3s;
+		 will-change: transform, width, opacity;
+	}
+	 .el:not(.s--active) {
+		 cursor: pointer;
+	}
+	 .el__overflow {
+		 overflow: hidden;
+		 position: relative;
+		 height: 100%;
+	}
+	 .el__inner {
+		 overflow: hidden;
+		 position: relative;
+		 height: 100%;
+		 transition: transform 1s;
+	}
+	 .cont.s--inactive .el__inner {
+		 transform: translate3d(0, 100%, 0);
+	}
+	 .el__bg {
+		 position: relative;
+		 width: calc(100vw - 140px);
+		 height: 100%;
+		 transition: transform 0.6s 0.7s;
+		 will-change: transform;
+	}
+	 .el__bg:before {
+		 content: "";
+		 position: absolute;
+		 left: 0;
+		 top: -5%;
+		 width: 100%;
+		 height: 110%;
+		 background-size: cover;
+		 background-position: center center;
+		 transition: transform 1s;
+		 transform: translate3d(0, 0, 0) scale(1);
+	}
+	 .cont.s--inactive .el__bg:before {
+		 transform: translate3d(0, -100%, 0) scale(1.2);
+	}
+	 .el.s--active .el__bg:before {
+		 transition: transform 0.8s;
+	}
+	 .el__bg:after {
+		 content: "";
+		 z-index: 1;
+		 position: absolute;
+		 left: 0;
+		 top: 0;
+		 width: 100%;
+		 height: 100%;
+		 background: rgba(0, 0, 0, 0.3);
+		 opacity: 0;
+		 transition: opacity 0.5s;
+	}
+	 .cont.s--el-active .el__bg:after {
+		 transition: opacity 0.5s 1.4s;
+		 opacity: 1 !important;
+	}
+	 .el__preview-cont {
+		 z-index: 2;
+		 display: flex;
+		 justify-content: center;
+		 align-items: center;
+		 position: absolute;
+		 left: 0;
+		 top: 0;
+		 width: 100%;
+		 height: 100%;
+		 transition: all 0.3s 1.2s;
+	}
+	 .cont.s--inactive .el__preview-cont {
+		 opacity: 0;
+		 transform: translateY(10px);
+	}
+	 .cont.s--el-active .el__preview-cont {
+		 opacity: 0;
+		 transform: translateY(30px);
+		 transition: all 0.5s;
+	}
+	 .el__heading {
+		 color: #fff;
+		 text-transform: uppercase;
+		 font-size: 18px;
+	}
+	 .el__content {
+		 z-index: -1;
+		 position: absolute;
+		 left: 0;
+		 top: 0;
+		 width: 100%;
+		 height: 100%;
+		 padding: 30px;
+		 opacity: 0;
+		 pointer-events: none;
+		 transition: all 0.1s;
+	}
+	 .el.s--active .el__content {
+		 z-index: 2;
+		 opacity: 1;
+		 pointer-events: auto;
+		 transition: all 0.5s 1.4s;
+	}
+	 .el__text {
+		 text-transform: uppercase;
+		 font-size: 40px;
+		 color: #fff;
+	}
+	 .el__close-btn {
+		 z-index: -1;
+		 position: absolute;
+		 right: 10px;
+		 top: 10px;
+		 width: 60px;
+		 height: 60px;
+		 opacity: 0;
+		 pointer-events: none;
+		 transition: all 0s 0.45s;
+		 cursor: pointer;
+	}
+	 .el.s--active .el__close-btn {
+		 z-index: 5;
+		 opacity: 1;
+		 pointer-events: auto;
+		 transition: all 0s 1.4s;
+	}
+	 .el__close-btn:before, .el__close-btn:after {
+		 content: "";
+		 position: absolute;
+		 left: 0;
+		 top: 50%;
+		 width: 100%;
+		 height: 8px;
+		 margin-top: -4px;
+		 background: #fff;
+		 opacity: 0;
+		 transition: opacity 0s;
+	}
+	 .el.s--active .el__close-btn:before, .el.s--active .el__close-btn:after {
+		 opacity: 1;
+	}
+	 .el__close-btn:before {
+		 transform: rotate(45deg) translateX(100%);
+	}
+	 .el.s--active .el__close-btn:before {
+		 transition: all 0.3s 1.4s cubic-bezier(0.72, 0.09, 0.32, 1.57);
+		 transform: rotate(45deg) translateX(0);
+	}
+	 .el__close-btn:after {
+		 transform: rotate(-45deg) translateX(100%);
+	}
+	 .el.s--active .el__close-btn:after {
+		 transition: all 0.3s 1.55s cubic-bezier(0.72, 0.09, 0.32, 1.57);
+		 transform: rotate(-45deg) translateX(0);
+	}
+	 .el__index {
+		 overflow: hidden;
+		 position: absolute;
+		 left: 0;
+		 bottom: -80px;
+		 width: 100%;
+		 height: 100%;
+		 min-height: 250px;
+		 text-align: center;
+		 font-size: 20vw;
+		 line-height: 0.85;
+		 font-weight: bold;
+		 transition: transform 0.5s, opacity 0.3s 1.4s;
+		 transform: translate3d(0, 1vw, 0);
+	}
+	 .el:hover .el__index {
+		 transform: translate3d(0, 0, 0);
+	}
+	 .cont.s--el-active .el__index {
+		 transition: transform 0.5s, opacity 0.3s;
+		 opacity: 0;
+	}
+	 .el__index-back, .el__index-front {
+		 position: absolute;
+		 left: 0;
+		 bottom: 0;
+		 width: 100%;
+	}
+	 .el__index-back {
+		 color: #2f3840;
+		 opacity: 0;
+		 transition: opacity 0.25s 0.25s;
+	}
+	 .el:hover .el__index-back {
+		 transition: opacity 0.25s;
+		 opacity: 1;
+	}
+	 .el__index-overlay {
+		 overflow: hidden;
+		 position: relative;
+		 transform: translate3d(0, 100%, 0);
+		 transition: transform 0.5s 0.1s;
+		 color: transparent;
+	}
+	 .el__index-overlay:before {
+		 content: attr(data-index);
+		 position: absolute;
+		 left: 0;
+		 bottom: 0;
+		 width: 100%;
+		 height: 100%;
+		 color: #fff;
+		 transform: translate3d(0, -100%, 0);
+		 transition: transform 0.5s 0.1s;
+	}
+	 .el:hover .el__index-overlay {
+		 transform: translate3d(0, 0, 0);
+	}
+	 .el:hover .el__index-overlay:before {
+		 transform: translate3d(0, 0, 0);
+	}
+	 .el:nth-child(1) {
+		 transform: translate3d(0%, 0, 0);
+		 transform-origin: 50% 50%;
+	}
+	 .cont.s--el-active .el:nth-child(1):not(.s--active) {
+		 transform: scale(0.5) translate3d(0%, 0, 0);
+		 opacity: 0;
+		 transition: transform 0.95s, opacity 0.95s;
+	}
+	 .el:nth-child(1) .el__inner {
+		 transition-delay: 0s;
+	}
+	 .el:nth-child(1) .el__bg {
+		 transform: translate3d(0%, 0, 0);
+	}
+	 .el:nth-child(1) .el__bg:before {
+		 transition-delay: 0s;
+		 background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/onepgscr-3.jpg");
+	}
+	 .el:nth-child(2) {
+		 transform: translate3d(105.2083333333%, 0, 0);
+		 transform-origin: 155.2083333333% 50%;
+	}
+	 .cont.s--el-active .el:nth-child(2):not(.s--active) {
+		 transform: scale(0.5) translate3d(105.2083333333%, 0, 0);
+		 opacity: 0;
+		 transition: transform 0.95s, opacity 0.95s;
+	}
+	 .el:nth-child(2) .el__inner {
+		 transition-delay: 0.1s;
+	}
+	 .el:nth-child(2) .el__bg {
+		 transform: translate3d(-19.2%, 0, 0);
+	}
+	 .el:nth-child(2) .el__bg:before {
+		 transition-delay: 0.1s;
+		 background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/onepgscr-4.jpg");
+	}
+	 .el:nth-child(3) {
+		 transform: translate3d(210.4166666667%, 0, 0);
+		 transform-origin: 260.4166666667% 50%;
+	}
+	 .cont.s--el-active .el:nth-child(3):not(.s--active) {
+		 transform: scale(0.5) translate3d(210.4166666667%, 0, 0);
+		 opacity: 0;
+		 transition: transform 0.95s, opacity 0.95s;
+	}
+	 .el:nth-child(3) .el__inner {
+		 transition-delay: 0.2s;
+	}
+	 .el:nth-child(3) .el__bg {
+		 transform: translate3d(-38.4%, 0, 0);
+	}
+	 .el:nth-child(3) .el__bg:before {
+		 transition-delay: 0.2s;
+		 background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/onepgscr-5.jpg");
+	}
+	 .el:nth-child(4) {
+		 transform: translate3d(315.625%, 0, 0);
+		 transform-origin: 365.625% 50%;
+	}
+	 .cont.s--el-active .el:nth-child(4):not(.s--active) {
+		 transform: scale(0.5) translate3d(315.625%, 0, 0);
+		 opacity: 0;
+		 transition: transform 0.95s, opacity 0.95s;
+	}
+	 .el:nth-child(4) .el__inner {
+		 transition-delay: 0.3s;
+	}
+	 .el:nth-child(4) .el__bg {
+		 transform: translate3d(-57.6%, 0, 0);
+	}
+	 .el:nth-child(4) .el__bg:before {
+		 transition-delay: 0.3s;
+		 background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/onepgscr-6.jpg");
+	}
+	 .el:nth-child(5) {
+		 transform: translate3d(420.8333333333%, 0, 0);
+		 transform-origin: 470.8333333333% 50%;
+	}
+	 .cont.s--el-active .el:nth-child(5):not(.s--active) {
+		 transform: scale(0.5) translate3d(420.8333333333%, 0, 0);
+		 opacity: 0;
+		 transition: transform 0.95s, opacity 0.95s;
+	}
+	 .el:nth-child(5) .el__inner {
+		 transition-delay: 0.4s;
+	}
+	 .el:nth-child(5) .el__bg {
+		 transform: translate3d(-76.8%, 0, 0);
+	}
+	 .el:nth-child(5) .el__bg:before {
+		 transition-delay: 0.4s;
+		 background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/onepgscr-7.jpg");
+	}
+	 .el:hover .el__bg:after {
+		 opacity: 0;
+	}
+	 .el.s--active {
+		 z-index: 1;
+		 width: 100%;
+		 transform: translate3d(0, 0, 0);
+		 transition: transform 0.6s, width 0.7s 0.7s, z-index 0s;
+	}
+	 .el.s--active .el__bg {
+		 transform: translate3d(0, 0, 0);
+		 transition: transform 0.6s;
+	}
+	 .el.s--active .el__bg:before {
+		 transition-delay: 0.6s;
+		 transform: scale(1.1);
+	}
+
+	/**********************************/
+
+	h3.name,h3.w3-center{
+		display: none;
+	}
+
+</style>
+<script>
+
+  	window.console = window.console || function(t) {};
+
+
+  		/*
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-7243260-2']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();  */
+
+	/****************************/
+	function view_moreless(id,action){
+			console.log(id,action);
+			more=id+'_more';
+			data=id+'_data';
+			less=id+'_less';
+
+			console.log(data)
+
+			if(action==="more"){
+				document.getElementById(data).style.display="block";
+				document.getElementById(more).style.display="none";
+				document.getElementById(less).style.display="inline-block";
+			}
+			else{
+				document.getElementById(data).style.display="none";
+				document.getElementById(more).style.display="inline-block";
+				document.getElementById(less).style.display="inline-block";		
+					
+				
+				location.href = "#"+id;	
+			}
+
+	}
+</script>
+</head>
+	<body>
+
+	<!-- Navbar (sit on top) -->
+	<div class="w3-top">
+	  <div class="w3-bar" id="myNavbar">
+	    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+	      <i class="fa fa-bars"></i>
+	    </a>
+	    <a href="#home" class="w3-bar-item w3-button"><i class="fa-solid fa-house-chimney"></i> HOME</a>
+	    <a href="#cbp-so-scroller" class="w3-bar-item w3-button w3-hide-small"><i class="fa-solid fa-square-rss"></i> BLOG</a>
+	    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> GALLERY</a>
+	    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+	    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+
+	    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+	      <!--i class="fa fa-search"></i-->
+	    </a>
+	  </div>
+
+	  <!-- Navbar on small screens -->
+	  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+	    <a href="#cbp-so-scroller" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa-solid fa-square-rss"></i> BLOG</a>
+	    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">GALLERY</a>
+	    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+	    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+
+	    <!--a href="#" class="w3-bar-item w3-button">SEARCH</a-->
+	  </div>
+	</div>
+
+	<!-- First Parallax Image with Logo Text -->
+	<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+	  <div class="animated-logo" style="white-space:nowrap;">
+
+
+	    <div class="animation01">
+	        <div class="rhombus_small">
+	            <div class="rhombus">
+	                <div class="border_box">
+	                    <span class="line line01"></span>
+	                    <span class="line line02"></span>
+	                    <span class="line line03"></span>
+	                    <span class="line line04"></span>
+	                    <span class="circle circle01"></span>
+	                    <span class="circle circle02"></span>
+	                    <span class="circle circle03"></span>
+	                    <span class="circle circle04"></span>
+	                    <span class="animation_line animation_line01"></span>
+	                    <span class="animation_line_wrapper animation_line02_wrapper"><span class="animation_line animation_line02"></span></span>
+	                    <span class="animation_line animation_line03"></span>
+	                    <span class="animation_line_wrapper animation_line04_wrapper"><span class="animation_line animation_line04"></span></span>
+	                    <span class="animation_line animation_line05"></span>
+	                    <span class="animation_line_wrapper animation_line06_wrapper"><span class="animation_line animation_line06"></span></span>
+	                    <span class="animation_line animation_line07"></span>
+	                    <span class="animation_line_wrapper animation_line08_wrapper"><span class="animation_line animation_line08"></span></span>
+	                </div>
+	                <div class="wave">
+	                    <div class="wave_wrapper"><div class="wave_box"></div></div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="animation02">
+	        <div class="rhombus_box">
+	            <span class="rhombus_item_wrapper rhombus_item01_wrapper"><span class="rhombus_item"></span></span>
+	            <span class="rhombus_item_wrapper rhombus_item02_wrapper"><span class="rhombus_item"></span></span>
+	        </div>
+	        <div class="double_content">
+	            <div class="double_wrapper02 dotted02"><div class="dotted_hide"><div class="double_wrapper01 dotted01"><span class="dotted_right"></span></div></div></div>
+	            <div class="double_wrapper02 white02"><div class="double_wrapper01 white01"></div></div>
+	            <div class="double_wrapper02 gray02"><div class="double_wrapper01 gray01"></div></div>
+	            <div class="double_wrapper02 orange02"><div class="double_wrapper01 orange01"></div></div>
+	        </div>
+	        <div class="name">
+	            <p>ASTRAAPEX</p>
+	            <span class="name_circle01"></span>
+	            <span class="name_circle02"></span>
+	        </div>
+	    </div>
+	    
+
+	  </div>
+
+	</div>
+
+	<div class="w3-content w3-container w3-padding-64" id="portfolio" translate="no">
+
+		<!-- Second Parallax Image with Portfolio Text -->
+		<!--div class="bgimg-2 w3-display-container w3-opacity-min">
+		  <div class="w3-display-middle">
+		    <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
+		  </div>
+		</div-->
+
+	  <ul>
+		  <li> <img src="
+		https://source.unsplash.com/ezSFnAFi9hY/500x500" alt="cut citrus fruits. ">
+		    <span>Lorem Ipsum</span>
+		  </li>
+		  <li> <img src="https://source.unsplash.com/TIGDsyy0TK4/500x500" alt="sliced mango. ">
+		    <span>Dolor Sit</span>
+		  </li>
+		  <li> <img src="https://source.unsplash.com/TdDtTu2rv4s/500x500" alt="a bunch of blueberries. "><span>Amet Consectetur</span></li>
+		  <li> <img src="https://source.unsplash.com/eudGUrDdBB0/500x500" alt="a pineapple sitting on a table. "><span>Adipiscing Elit</span></li>
+		  <li> <img src="https://source.unsplash.com/eJH4f1rlG7g/500x500" alt="frozen raspberries. "><span>Nunc Tortor</span></li>
+		  <li> <img src="https://source.unsplash.com/24RUrLSW1HI/500x500" alt="a sliced strawberry. "><span>Metus Mollis</span></li>
+		  <li> <img src="https://source.unsplash.com/h5yMpgOI5nI/500x500" alt="an arrangement of assorted sliced fruits. "><span>Congue Sagittis</span></li>
+		  <li> <img src="https://source.unsplash.com/2TYrR2IB72s/500x500" alt="sliced watermelons. "><span>Vestibulum Et</span></li>
+		  <li> <img src="https://source.unsplash.com/1cWZgnBhZRs/500x500" alt="grapefruits, lemons, and pomegranates. "><span>Donec Eget</span></li>
+		  <li> <img src="https://source.unsplash.com/9aOswReDKPo/500x500" alt="half of an avocado. "><span>Maecenas et Justo</span></li>
+		  <li> <img src="https://source.unsplash.com/Nl7eLS8E2Ss/500x500" alt="half of a lime. "><span>Malesuada Quam</span></li>
+		  <li> <img src="https://source.unsplash.com/3HhXWJzG5Ko/500x500" alt="a single cherry with stem. "><span>Ultricies Sollicitudin</span></li>
+		  <li> <img src="https://source.unsplash.com/fczCr7MdE7U/500x500" alt="a bunch of bananas. "><span>Gravida Nibh</span></li>
+		  <li> <img src="https://source.unsplash.com/uI900SItAyY/500x500" alt="three pears. "><span>Pellentesque Sapien</span></li>
+		  <li> <img src="https://source.unsplash.com/0AynZdszfz0/500x500" alt="a basket full of peaches next to a plate with sliced peaches. "><span>Suspendisse Vel</span></li>
+		  <li> <img src="https://source.unsplash.com/C6JhUKs9q8M/500x500" alt="a bowl of avocados. "><span>Mauris Consectetur</span></li>
+		</ul>
+	  
+	    <script id="rendered-js">
+
+			const lis = document.querySelectorAll("li");
+
+			//console.log(lis.length);
+			//# sourceURL=pen.js
+	    </script> 
+	</div>
+
+	<div id="cbp-so-scroller" class="cbp-so-scroller">
+			<section id="self_improve" class="cbp-so-section">
+				<figure class="cbp-so-side cbp-so-side-left">
+					<img src="src/db/img/Self_Improvement.png" >
+				</figure>
+				<article class="cbp-so-side cbp-so-side-right">
+					<h2 >Self-Improvement and Personal Development</h2>
+					<p>In AstraApex's Self-Improvement and Personal Development corner, you are welcomed. Transformation begins here as we strive to become the best versions of ourselves. Sharing ideas is how we hope to empower you to realize your full capacity.<span onclick="view_moreless('self_improve','more');" class="show_more" id="self_improve_more" style="display:inline-block;">..show more</span>
+						<span id="self_improve_data" style="display:none;">
+						With personal development in mind, our writers and experts are committed to your guidance. We cover everything from managing self-doubt to effective goal setting, including confidence boosting and time mastery.
+						<br>
+						A customized journey it is, at AstraApex, for personal development. Our content encompasses a broad spectrum of topics, tailored to accommodate your individual needs and ambitions. From this platform, you can explore resources and learnings that improve your job, friendships, and total health.
+						<br>
+						Let us embark on an illuminating self-examination together. With unified effort, self-improvement's seas will be navigated, leading to increased growth, resilience, and a richer life.
+							<span class="show_less" id="self_improve_less" onclick="view_moreless('self_improve','less');" style="display:inline-block;">..show less</span>
+						</span>
+					</p>
+				</article>
+			</section>
+
+			<section id="Hobbies" class="cbp-so-section">
+				<article class="cbp-so-side cbp-so-side-left">
+					<h2>Hobbies and Special Interests</h2>
+					<p>Passion and inspiration meet at Astra Apex's Hobbies and Special Interests section. Immersed within this atmosphere, we embark upon an adventure through the diverse realms of hobbies, unearthing the enlivening passions that stimulate our minds and revitalize our inner selves.
+						<span onclick="view_moreless('Hobbies','more');" class="show_more" id="Hobbies_more" style="display:inline-block;">..show more</span>
+						<span id="Hobbies_data" style="display:none;">
+						Through passion, a more satisfying life can be found. For those just starting out or experienced collectors, here is where you will find something that suits your interests. With topics ranging from gardening to model making, hiking to board games, our collection offers something for everyone.
+						<br>
+						Offering you insights, advice, and camaraderie through their knowledge, experience, and ardor, our dedicated members are here. Exploration, learning, and connection await as you delve into your preferred hobbies and maybe even find some new obsessions.
+						<br>
+						With us, embark on a thrilling adventure through the captivating universe of hobbies and passions. Our objective is to transform leisure hours into joy, creativity, and lifelong pursuits.
+							<span class="show_less" id="Hobbies_less" onclick="view_moreless('Hobbies','less');" style="display:inline-block;">..show less</span>
+						</span>
+					</p>
+				</article>
+				<figure class="cbp-so-side cbp-so-side-right">
+					<img src="src/db/img/Hobbies.png" >
+				</figure>
+			</section>
+
+			<section id="Personal_Finance" class="cbp-so-section">
+				<figure class="cbp-so-side cbp-so-side-left">
+					<img src="src/db/img/personal-finances.png" >
+				</figure>
+				<article class="cbp-so-side cbp-so-side-right">
+					<h2>Personal Finance</h2>
+					<p>At Astra Apex Personal Finance niche, we guide you towards financial empowerment and success. Financial literacy holds the secret to achieving dreams and securing one's future in today's rapidly moving world. Helping you build a secure financial future; Astra Apex prioritizes making knowledgeable decisions.
+						<span onclick="view_moreless('Personal_Finance','more');" class="show_more" id="Personal_Finance_more" style="display:inline-block;">..show more</span>
+						<span id="Personal_Finance_data" style="display:none;">
+						Personal finance's nuances are navigated by our team of financial experts and advisors. Coverage extends across all areas of personal finance, from budgeting to retirement planning, as we take a comprehensive approach. Complexity makes managing money hard, so we distil it into digestible, implementable steps.
+						<br>
+						Personal finance's unpredictable landscape requires navigating, so join us! Achieving your financial objectives and living a life without monetary constraints can be facilitated by investigating articles, tips, and materials.
+						<br>
+						Beginning here, your personal finance journey at Astra Apex takes off. Towards financial stability and prosperity, let us embark on this path
+							<span class="show_less" id="Personal_Finance_less" onclick="view_moreless('Personal_Finance','less');" style="display:inline-block;">..show less</span>
+						</span>
+					</p>
+				</article>
+			</section>
+
+
+			<section id="Technology" class="cbp-so-section">
+				<article class="cbp-so-side cbp-so-side-left">
+					<h2>Technology</h2>
+					<p>Here begins your passage into the future, courtesy of Astra Apex's Technology corner. Technology affects almost all areas of modern living, from communication and entertainment to work and innovation, in today's technologically advanced era.  Dedicated to offering you well-researched articles, reviews, and in-depth analysis on all tech-related topics, our team consists of skilled writers and experts. Regardless of your tech expertise, you'll find worthwhile knowledge here.
+						<span onclick="view_moreless('Technology','more');" class="show_more" id="Technology_more" style="display:inline-block;">..show more</span>
+						<span id="Technology_data" style="display:none;">
+						With technology developing at such a fast rate, we're here to offer assistance in staying current. From smartphones to virtual reality and AI, join us as we dive into the vast and evolving world of technology.
+						<br>
+						The Technology section of Astra Apex offers entrance to the tech revolution. Together we will embark on this journey and embrace the exciting future that technology holds.
+							<span class="show_less" id="Technology_less" onclick="view_moreless('Technology','less');" style="display:inline-block;">..show less</span>
+						</span>
+					</p>
+				</article>
+				<figure class="cbp-so-side cbp-so-side-right">
+					<img src="src/db/img/Technology.png" >
+				</figure>
+			</section>
+
+
+			<section id="Stories_and_memories" class="cbp-so-section">
+				<figure class="cbp-so-side cbp-so-side-left">
+					<img src="src/db/img/Stories_and_memories.png" >
+				</figure>
+				<article class="cbp-so-side cbp-so-side-right">
+					<h2>Stories and Memoirs</h2>
+					<p>Through personal narratives, the power of words at Astra Apex Stories and Memoirs lives. Through stories, emotions that reside at their most basic level can be connected, inspired, and resonated with. Join us in honouring the craft of tale spinning and discover a realm rich in diverse accounts and touching reminiscences.
+						<span onclick="view_moreless('Stories_and_memories','more');" class="show_more" id="Stories_and_memories_more" style="display:inline-block;">..show more</span>
+						<span id="Stories_and_memories_data" style="display:none;">
+						With the combined creativity and passion of our team of writers, storytellers, and authors, we offer a rich tapestry of captivating narratives. Sharing stories is worth our time when those tales involve moments of adventure, triumph, and introspection.
+						<br>
+						As we offer you a wealth of voices, perspectives, and emotions, immerse yourself in the world of storytelling. Uncover inspiring tales, entertaining stories, and touching narratives.
+						<br>
+						Believing in the potency of tales, Astra Apex strives to link everyone together. On this literary expedition, each word serves as an invitation to delve into the human experience and realm of imagination.
+
+							<span class="show_less" id="TStories_and_memories_less" onclick="view_moreless('Stories_and_memories','less');" style="display:inline-block;">..show less</span>
+						</span>
+					</p>
+				</article>
+			</section>
+		</div>
+	</div>
+
+
+	<!----------------------------------------->
+
+	<div class="cont s--inactive">
+	  <!-- cont inner start -->
+	  <div class="cont__inner">
+	    <!-- el start -->
+	    <div class="el">
+	      <div class="el__overflow">
+	        <div class="el__inner">
+	          <div class="el__bg"></div>
+	          <div class="el__preview-cont">
+	            <h2 class="el__heading">Section 1</h2>
+	          </div>
+	          <div class="el__content">
+	            <div class="el__text">Whatever</div>
+	            <div class="el__close-btn"></div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="el__index">
+	        <div class="el__index-back">1</div>
+	        <div class="el__index-front">
+	          <div class="el__index-overlay" data-index="1">1</div>
+	        </div>
+	      </div>
+	    </div>
+	    <!-- el end -->
+	    <!-- el start -->
+	    <div class="el">
+	      <div class="el__overflow">
+	        <div class="el__inner">
+	          <div class="el__bg"></div>
+	          <div class="el__preview-cont">
+	            <h2 class="el__heading">Section 2</h2>
+	          </div>
+	          <div class="el__content">
+	            <div class="el__text">Whatever</div>
+	            <div class="el__close-btn"></div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="el__index">
+	        <div class="el__index-back">2</div>
+	        <div class="el__index-front">
+	          <div class="el__index-overlay" data-index="2">2</div>
+	        </div>
+	      </div>
+	    </div>
+	    <!-- el end -->
+	    <!-- el start -->
+	    <div class="el">
+	      <div class="el__overflow">
+	        <div class="el__inner">
+	          <div class="el__bg"></div>
+	          <div class="el__preview-cont">
+	            <h2 class="el__heading">Section 3</h2>
+	          </div>
+	          <div class="el__content">
+	            <div class="el__text">Whatever</div>
+	            <div class="el__close-btn"></div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="el__index">
+	        <div class="el__index-back">3</div>
+	        <div class="el__index-front">
+	          <div class="el__index-overlay" data-index="3">3</div>
+	        </div>
+	      </div>
+	    </div>
+	    <!-- el end -->
+	    <!-- el start -->
+	    <div class="el">
+	      <div class="el__overflow">
+	        <div class="el__inner">
+	          <div class="el__bg"></div>
+	          <div class="el__preview-cont">
+	            <h2 class="el__heading">Section 4</h2>
+	          </div>
+	          <div class="el__content">
+	            <div class="el__text">Whatever</div>
+	            <div class="el__close-btn"></div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="el__index">
+	        <div class="el__index-back">4</div>
+	        <div class="el__index-front">
+	          <div class="el__index-overlay" data-index="4">4</div>
+	        </div>
+	      </div>
+	    </div>
+	    <!-- el end -->
+	    <!-- el start -->
+	    <div class="el">
+	      <div class="el__overflow">
+	        <div class="el__inner">
+	          <div class="el__bg"></div>
+	          <div class="el__preview-cont">
+	            <h2 class="el__heading">Section 5</h2>
+	          </div>
+	          <div class="el__content">
+	            <div class="el__text">Whatever</div>
+	            <div class="el__close-btn"></div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="el__index">
+	        <div class="el__index-back">5</div>
+	        <div class="el__index-front">
+	          <div class="el__index-overlay" data-index="5">5</div>
+	        </div>
+	      </div>
+	    </div>
+	    <!-- el end -->
+	  </div>
+	  <!-- cont inner end -->
+	</div>
+
+	<script type="text/javascript">
+		var $cont = document.querySelector('.cont');
+		var $elsArr = [].slice.call(document.querySelectorAll('.el'));
+		var $closeBtnsArr = [].slice.call(document.querySelectorAll('.el__close-btn'));
+
+		setTimeout(function() {
+		  $cont.classList.remove('s--inactive');
+		}, 200);
+
+		$elsArr.forEach(function($el) {
+		  $el.addEventListener('click', function() {
+		    if (this.classList.contains('s--active')) return;
+		    $cont.classList.add('s--el-active');
+		    this.classList.add('s--active');
+		  });
+		});
+
+		$closeBtnsArr.forEach(function($btn) {
+		  $btn.addEventListener('click', function(e) {
+		    e.stopPropagation();
+		    $cont.classList.remove('s--el-active');
+		    document.querySelector('.el.s--active').classList.remove('s--active');
+		  });
+		});
+
+		
+	</script>
+
+
+	<!-- Container (About Section) -->
+
+
+	<div class="w3-row w3-center w3-dark-grey w3-padding-16">
+	  <div class="w3-quarter w3-section">
+	    <span class="w3-xlarge">14+</span><br>
+	    Partners
+	  </div>
+	  <div class="w3-quarter w3-section">
+	    <span class="w3-xlarge">55+</span><br>
+	    Projects Done
+	  </div>
+	  <div class="w3-quarter w3-section">
+	    <span class="w3-xlarge">89+</span><br>
+	    Happy Clients
+	  </div>
+	  <div class="w3-quarter w3-section">
+	    <span class="w3-xlarge">150+</span><br>
+	    Meetings
+	  </div>
+	</div>
+
+
+	<!-- Container (Portfolio Section) -->
+	
+
+	<!-- Modal for full size images on click-->
+	<!--div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+	  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+	  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+	    <img id="img01" class="w3-image">
+	    <p id="caption" class="w3-opacity w3-large"></p>
+	  </div>
+	</div-->
+
+
+
+
+	<div class="row">
+	    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+	      <div class="our-team">
+	        <div class="picture">
+	          <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
+	        </div>
+	        <div class="team-content">
+	          <h3 class="name">Michele Miller</h3>
+	          <h4 class="title">Web Developer</h4>
+	        </div>
+	        <ul class="social">
+	          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-facebook" aria-hidden="true"></a></li>
+	          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-twitter" aria-hidden="true"></a></li>
+	          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-google-plus" aria-hidden="true"></a></li>
+	          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-linkedin" aria-hidden="true"></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+	      <div class="our-team">
+	        <div class="picture">
+	          <img class="img-fluid" src="https://picsum.photos/130/130?image=839">
+	        </div>
+	        <div class="team-content">
+	          <h3 class="name">Patricia Knott</h3>
+	          <h4 class="title">Web Developer</h4>
+	        </div>
+	        <ul class="social">
+	          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-facebook" aria-hidden="true"></a></li>
+	          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-twitter" aria-hidden="true"></a></li>
+	          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-google-plus" aria-hidden="true"></a></li>
+	          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-linkedin" aria-hidden="true"></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+	      <div class="our-team">
+	        <div class="picture">
+	          <img class="img-fluid" src="https://picsum.photos/130/130?image=856">
+	        </div>
+	        <div class="team-content">
+	          <h3 class="name">Justin Ramos</h3>
+	          <h4 class="title">Web Developer</h4>
+	        </div>
+	        <ul class="social">
+	          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-facebook" aria-hidden="true"></a></li>
+	          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-twitter" aria-hidden="true"></a></li>
+	          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-google-plus" aria-hidden="true"></a></li>
+	          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-linkedin" aria-hidden="true"></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+	      <div class="our-team">
+	        <div class="picture">
+	          <img class="img-fluid" src="https://picsum.photos/130/130?image=836">
+	        </div>
+	        <div class="team-content">
+	          <h3 class="name">Mary Huntley</h3>
+	          <h4 class="title">Web Developer</h4>
+	        </div>
+	        <ul class="social">
+  	          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-facebook" aria-hidden="true"></a></li>
+	          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-twitter" aria-hidden="true"></a></li>
+	          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-google-plus" aria-hidden="true"></a></li>
+	          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-linkedin" aria-hidden="true"></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </div>
+
+
+	<div class="w3-content w3-container w3-padding-64" id="about">
+
+		<!-- Third Parallax Image with Portfolio Text -->
+		<div class="bgimg-3 w3-display-container w3-opacity-min">
+		  <div class="w3-display-middle">
+		     <span class="w3-xxlarge w3-text-white w3-wide">ABOUT US</span>
+		  </div>
+		</div>
+
+	  <h3 class="w3-center">ABOUT US</h3>
+	  <p class="w3-center"><em>Exciting and varied content awaits you at AstraApex.</em></p>
+	  <p>Thriving on creativity, AstraApex sees it as integral to human life and greatness. Behind our intentions, creativity and inclusivity serve as the engine. Glad you're here; we aim to recharge your thoughts with fresh motivations via this site. On this site, the aim is to link people creatively via word weaving. The universe’s inception and the zenith of human ingenuity are alluded to by the names "Astra" and "Apex". Derived from "Astra" and "Apex", our website's name has meaning.</p>
+	  <div class="w3-row">
+	    <div class="w3-col m6 w3-center w3-padding-large">
+	      <!--p><b><i class="fa fa-user w3-margin-right"></i>My Name</b></p><br-->
+	      <img src="https://www.w3schools.com//w3images/avatar_hat.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" >
+	    </div>
+
+	    <!-- Hide this text on small devices -->
+	    <div class="w3-col m6 w3-hide-small w3-padding-large">
+	      <p>More than just a website, AstraApex represents an online sanctuary. A diverse assortment of weblogs on various subjects has been curated by us here. Bright examples they are of the power of the written word. It is our passion that drives us at AstraApex to discover fresh approaches, value unpredictability, and illuminate hidden gems of human ingenuity. Home away from home for anyone who identifies as artistic, thoughtful, a dreamer, or just needing a reprieve from daily life. AstraApex invites you with all our hearts.</p>
+	    </div>
+	  </div>
+	</div>
+
+
+	<!-- Container (Contact Section) -->
+	<div class="w3-content w3-container w3-padding-64" id="contact">
+
+	<!-- Third Parallax Image with Portfolio Text -->
+	<div class="bgimg-3 w3-display-container w3-opacity-min">
+	  <div class="w3-display-middle">
+	     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+	  </div>
+	</div>
+
+	  <h3 class="w3-center">WHERE I WORK</h3>
+	  <p class="w3-center"><em>I'd love your feedback!</em></p>
+
+	  <div class="w3-row w3-padding-32 w3-section">
+	    <div class="w3-col m4 w3-container">
+	      <img src="https://www.w3schools.com//w3images/map.jpg" class="w3-image w3-round" style="width:100%">
+	    </div>
+	    <div class="w3-col m8 w3-panel">
+	      <div class="w3-large w3-margin-bottom">
+	        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Chicago, US<br>
+	        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +00 151515<br>
+	        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
+	      </div>
+	      <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
+	      <form action="/action_page.php" target="_blank">
+	        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+	          <div class="w3-half">
+	            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+	          </div>
+	          <div class="w3-half">
+	            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+	          </div>
+	        </div>
+	        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+	        <button class="w3-button w3-black w3-right w3-section" type="submit">
+	          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+	        </button>
+	      </form>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+	  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+	  <div class="w3-xlarge w3-section">
+	    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+	    <i class="fa fa-instagram w3-hover-opacity"></i>
+	    <i class="fa fa-snapchat w3-hover-opacity"></i>
+	    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+	    <i class="fa fa-twitter w3-hover-opacity"></i>
+	    <i class="fa fa-linkedin w3-hover-opacity"></i>
+	  </div>
+	  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+	</footer>
+
+
+	<script src="https://tympanus.net/Blueprints/OnScrollEffectLayout/js/classie.js"></script>
+	<script src="https://tympanus.net/Blueprints/OnScrollEffectLayout/js/cbpScroller.js"></script>
+	<script>
+		new cbpScroller( document.getElementById( 'cbp-so-scroller' ) );
+	</script>
+	 
+	<script>
+
+
+	// Modal Image Gallery
+	function onClick(element) {
+	  document.getElementById("img01").src = element.src;
+	  document.getElementById("modal01").style.display = "block";
+	  var captionText = document.getElementById("caption");
+	  captionText.innerHTML = element.alt;
+	}
+
+	// Change style of navbar on scroll
+	window.onscroll = function() {myFunction()};
+	function myFunction() {
+	    var navbar = document.getElementById("myNavbar");
+	    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+	        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+	    } else {
+	        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+	    }
+	}
+
+	// Used to toggle the menu on small screens when clicking on the menu button
+	function toggleFunction() {
+	    var x = document.getElementById("navDemo");
+	    if (x.className.indexOf("w3-show") == -1) {
+	        x.className += " w3-show";
+	    } else {
+	        x.className = x.className.replace(" w3-show", "");
+	    }
+	}
+	</script>
+
+	</body>
+</html>
